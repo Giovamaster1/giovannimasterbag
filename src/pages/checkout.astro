@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import CheckoutFormClient from '../components/CheckoutFormClient.jsx';
+
+const { searchParams } = Astro.url;
+const ref = searchParams.get('ref') || 'alforjas-sport';
+
+const precios = {
+  'alforjas-sport': 349900,
+  'tailbag-dual': 184900,
+  'tankbag-gps': 337900,
+  'petbag-s': 369900,
+  'petbag-m': 399900,
+  'petbag-xl': 429900,
+};
+
+const monto = precios[ref] || 349900;
+---
+
+<Base>
+  <CheckoutFormClient client:load monto={monto} />
+</Base>
+

@@ -1,0 +1,62 @@
+---
+const isDev = import.meta.env.DEV;
+---
+
+<section class="w-full bg-[#0f0f0f] text-white py-16 px-4 md:px-0">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+
+    <!-- Imagen moto -->
+    <img
+      src="/images/Alforjas-Kawasaki-Ninja-300.webp"
+      alt="Alforjas Kawasaki Ninja 300"
+      class="w-full md:w-auto mx-auto md:mx-0"
+      loading="lazy"
+    />
+
+    <!-- Contenido de texto -->
+    <div class="flex flex-col items-start space-y-6">
+      <h2 class="text-3xl md:text-4xl font-bold leading-tight">
+        Más de 1000 motociclistas lo confirman:<br />
+        Masterbag es tu mejor compañero de ruta
+      </h2>
+
+      <p class="italic text-lg">
+        ⭐⭐⭐⭐⭐ “Excelente producto, buena calidad, súper prácticas y útiles para salir a rodar cómodos y llevar todo lo necesario. Feliz con mis alforjas Masterbag ⚡”<br />
+        – Sebastián S.
+      </p>
+
+      <!-- Condicional: solo se muestra en producción -->
+      {isDev ? (
+        <div class="text-sm text-[#999] border border-[#444] p-4 rounded">
+          <strong>Vista previa en local</strong><br />
+          El carrusel real de reseñas aparecerá cuando publiques en un dominio público.
+        </div>
+      ) : (
+        <div
+          class="reputon-google-reviews-widget"
+          data-content-index="1"
+          data-theme="dark"
+          data-type="carousel"
+          data-autoscroll="true"
+          data-show-review-photos="true"
+          data-write-review="false"
+          data-show-rating="false"
+          data-fixed-reviews-height="false"
+        ></div>
+      )}
+
+      <a href="#cta" class="bg-[#caa64f] text-black px-6 py-3 mt-4 font-semibold rounded hover:bg-[#d6ae5e] transition">
+        Llévate tu Masterbag ahora →
+      </a>
+    </div>
+  </div>
+
+  <!-- Script de reseñas (solo carga en producción) -->
+  {!isDev && (
+    <script
+      type="text/javascript"
+      src="https://cdn.reputon.com/assets/widget.js?shop=masterbag-colombia.myshopify.com"
+      defer
+    ></script>
+  )}
+</section>

@@ -1,0 +1,39 @@
+---
+const {
+  title = 'ALFORJAS SPORT',
+  subtitle = 'DISEÑADAS PARA TU VIAJE',
+  price = '$349.900',
+  ctaLabel = 'Comprar ahora',
+  ctaUrl = '/checkout?ref=alforjas-sport',
+  imageDesktop = '/images/landing-alforjas-sport.webp',
+  alt = 'Alforjas rojas en moto deportiva'
+} = Astro.props;
+---
+
+<section class="bg-[#0f0f0f] py-16 px-6 lg:px-24">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-12">
+
+    <!-- Texto -->
+    <div class="text-white space-y-6">
+      <h1 class="text-5xl font-extrabold leading-tight">
+        <span class="block">{title}</span>
+        <span class="block text-[#c59e51]">{subtitle}</span>
+      </h1>
+      <p class="text-gray-400 text-lg">Desde {price} — Envío incluido</p>
+      <a href={ctaUrl} class="inline-block bg-[#c59e51] text-black font-bold py-4 px-8 rounded-lg shadow-lg hover:opacity-90 transition">
+        {ctaLabel}
+      </a>
+    </div>
+
+    <!-- Imagen -->
+    <div class="aspect-[29/21] overflow-hidden rounded-2xl shadow-xl">
+      <img
+        src={imageDesktop}
+        alt={alt}
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+    </div>
+
+  </div>
+</section>

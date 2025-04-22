@@ -1,0 +1,19 @@
+---
+import EncabezadoLanding from './EncabezadoLanding.astro';
+
+const {
+  title = "RODAR CON MASTERBAG — ES RODAR CON CLASE",
+  subtitle = "Alforjas premium antirrobo y sin herrajes, hechas para los que manejan moto con pasión y estilo",
+  ctaUrl = "/checkout?ref=alforjas-sport",
+  ctaLabel = "Adquiere la tuya hoy",
+  imageDesktop = "/images/landing-alforjas-sport.webp"
+} = Astro.props;
+---
+
+<EncabezadoLanding
+  title={title}
+  subtitle={subtitle}
+  ctaUrl={ctaUrl}
+  ctaLabel={ctaLabel}
+  imageDesktop={imageDesktop}
+/>

@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+
+import HeroAlforjas from '../components/HeroAlforjas.astro';
+import BeneficiosLanding from '../components/BeneficiosLanding.astro';
+import MedidasyFichaLanding from '../components/MedidasyFichaLanding.jsx';
+import Seccion2Landing from '../components/Seccion2Landing.astro';
+import Seccion6BeneficiosLanding from '../components/Seccion6BeneficiosLanding.astro';
+import CalificacionesLanding from '../components/CalificacionesLanding.astro';
+import CheckoutFormClient from '../components/CheckoutFormClient.jsx';
+---
+
+<Base>
+  <HeroAlforjas />
+  <BeneficiosLanding />
+  <MedidasyFichaLanding client:load />
+  <Seccion2Landing />
+  <Seccion6BeneficiosLanding />
+  <CalificacionesLanding /><CheckoutFormClient monto={34990000} />
+</Base>
