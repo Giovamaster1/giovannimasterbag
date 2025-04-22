@@ -4,16 +4,25 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import { v4 as uuidv4 } from "uuid";
 import dotenv from "dotenv";
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
+import compression from "compression";
+import sirv from "sirv";
 
 // 🧠 Cargar variables de entorno
 dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const ORDERS_FILE = "./orders.json";
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// Middleware
 app.use(cors());
 app.use(bodyParser.json());
+app.use(compression());
+app.use(sirv(join(__dirname, "dist"), { single: true })); // <-- Sirve el build de Astro
 
 /**
  * Crear orden nueva desde formulario
