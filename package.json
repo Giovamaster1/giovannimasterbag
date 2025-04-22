@@ -9,6 +9,7 @@
     "start": "astro preview"
   },
   "dependencies": {
+    "@astrojs/node": "^2.0.2",
     "@astrojs/react": "^4.2.4",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
